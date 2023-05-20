@@ -39,16 +39,16 @@ public class FuncionarioDao {
             while (resultSet.next()) {
 
                 Funcionario funcionario = new Funcionario();
-                funcionario.setFuncionario_id(resultSet.getInt("funcionario_id"));
-                funcionario.setTipo_identificacion_id(resultSet.getInt("tipo_identificacion_id"));
-                funcionario.setNumero_identificacion(resultSet.getString("numero_identificacion"));
+                funcionario.setFuncionarioId(resultSet.getInt("funcionario_id"));
+                funcionario.setTipoIdentificacionId(resultSet.getInt("tipo_identificacion_id"));
+                funcionario.setNumeroIdentificacion(resultSet.getString("numero_identificacion"));
                 funcionario.setNombres(resultSet.getString("nombres"));
                 funcionario.setApellidos(resultSet.getString("apellidos"));
-                funcionario.setEstado_civil_id(resultSet.getInt("estado_civil_id"));
+                funcionario.setEstadoCivilId(resultSet.getInt("estado_civil_id"));
                 funcionario.setSexo(resultSet.getString("sexo"));
                 funcionario.setDireccion(resultSet.getString("direccion"));
-                funcionario.setNumero_telefono(resultSet.getString("numero_telefono"));
-                funcionario.setFecha_nacimiento(resultSet.getString("fecha_nacimiento"));
+                funcionario.setNumeroTelefono(resultSet.getString("numero_telefono"));
+                funcionario.setFechaNacimiento(resultSet.getString("fecha_nacimiento"));
                 funcionarios.add(funcionario);
 
             }
@@ -79,15 +79,15 @@ public class FuncionarioDao {
             
             connection = ConnectionUtil.getConnection();
             preparedStatement = connection.prepareCall(CREATE_FUNCIONARIOS);
-            preparedStatement.setInt(1, funcionario.getTipo_identificacion_id());
-            preparedStatement.setString(2, funcionario.getNumero_identificacion());
+            preparedStatement.setInt(1, funcionario.getTipoIdentificacionId());
+            preparedStatement.setString(2, funcionario.getNumeroIdentificacion());
             preparedStatement.setString(3, funcionario.getNombres());
             preparedStatement.setString(4, funcionario.getApellidos());
-            preparedStatement.setInt(5, funcionario.getEstado_civil_id());
+            preparedStatement.setInt(5, funcionario.getEstadoCivilId());
             preparedStatement.setString(6, funcionario.getSexo());
             preparedStatement.setString(7, funcionario.getDireccion());
-            preparedStatement.setString(8, funcionario.getNumero_telefono());
-            preparedStatement.setString(9, funcionario.getFecha_nacimiento());
+            preparedStatement.setString(8, funcionario.getNumeroTelefono());
+            preparedStatement.setString(9, funcionario.getFechaNacimiento());
             preparedStatement.executeUpdate();
 
         } finally {
@@ -119,16 +119,16 @@ public class FuncionarioDao {
             if (resultSet.next()) {
 
                 funcionario = new Funcionario();
-                funcionario.setFuncionario_id(resultSet.getInt("funcionario_id"));
-                funcionario.setTipo_identificacion_id(resultSet.getInt("tipo_identificacion_id"));
-                funcionario.setNumero_identificacion(resultSet.getString("numero_identificacion"));
+                funcionario.setFuncionarioId(resultSet.getInt("funcionario_id"));
+                funcionario.setTipoIdentificacionId(resultSet.getInt("tipo_identificacion_id"));
+                funcionario.setNumeroIdentificacion(resultSet.getString("numero_identificacion"));
                 funcionario.setNombres(resultSet.getString("nombres"));
                 funcionario.setApellidos(resultSet.getString("apellidos"));
-                funcionario.setEstado_civil_id(resultSet.getInt("estado_civil_id"));
+                funcionario.setEstadoCivilId(resultSet.getInt("estado_civil_id"));
                 funcionario.setSexo(resultSet.getString("sexo"));
                 funcionario.setDireccion(resultSet.getString("direccion"));
-                funcionario.setNumero_telefono(resultSet.getString("numero_telefono"));
-                funcionario.setFecha_nacimiento(resultSet.getString("fecha_nacimiento"));
+                funcionario.setNumeroTelefono(resultSet.getString("numero_telefono"));
+                funcionario.setFechaNacimiento(resultSet.getString("fecha_nacimiento"));
                 
             }
             return funcionario;
@@ -158,15 +158,16 @@ public class FuncionarioDao {
             
             connection = ConnectionUtil.getConnection();
             preparedStatement = connection.prepareStatement(UPDATE_FUNCIONARIOS);
-            preparedStatement.setString(1, funcionario.getNumero_identificacion());
-            preparedStatement.setString(2, funcionario.getNombres());
-            preparedStatement.setString(3, funcionario.getApellidos());
-            preparedStatement.setInt(4, funcionario.getEstado_civil_id());
-            preparedStatement.setString(5, funcionario.getSexo());
-            preparedStatement.setString(6, funcionario.getDireccion());
-            preparedStatement.setString(7, funcionario.getNumero_telefono());
-            preparedStatement.setString(8, funcionario.getFecha_nacimiento());
-            preparedStatement.setInt(9, funcionario.getFuncionario_id());
+            preparedStatement.setInt(1, funcionario.getTipoIdentificacionId());
+            preparedStatement.setString(2, funcionario.getNumeroIdentificacion());
+            preparedStatement.setString(3, funcionario.getNombres());
+            preparedStatement.setString(4, funcionario.getApellidos());
+            preparedStatement.setInt(5, funcionario.getEstadoCivilId());
+            preparedStatement.setString(6, funcionario.getSexo());
+            preparedStatement.setString(7, funcionario.getDireccion());
+            preparedStatement.setString(8, funcionario.getNumeroTelefono());
+            preparedStatement.setString(9, funcionario.getFechaNacimiento());
+            preparedStatement.setInt(10, funcionario.getFuncionarioId());
             preparedStatement.executeUpdate();
             
         } finally {
@@ -181,7 +182,7 @@ public class FuncionarioDao {
         }
     }
     
-    public void eliminarFuncionario(int funcionario_id) throws SQLException {
+    public void eliminarFuncionario(int funcionarioId) throws SQLException {
         
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -190,7 +191,7 @@ public class FuncionarioDao {
             
             connection = ConnectionUtil.getConnection();
             preparedStatement = connection.prepareStatement(DELETE_FUNCIONARIOS);
-            preparedStatement.setInt(1, funcionario_id);
+            preparedStatement.setInt(1, funcionarioId);
             preparedStatement.executeUpdate();
             
         } finally {

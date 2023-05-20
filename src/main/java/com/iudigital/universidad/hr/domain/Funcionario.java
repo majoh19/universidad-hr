@@ -2,39 +2,39 @@ package com.iudigital.universidad.hr.domain;
 
 public class Funcionario {
     
-    private int funcionario_id;
-    private int tipo_identificacion_id;
-    private String numero_identificacion;
+    private int funcionarioId;
+    private int tipoIdentificacionId;
+    private String numeroIdentificacion;
     private String nombres;
     private String apellidos;
-    private int estado_civil_id;
+    private int estadoCivilId;
     private String sexo;
     private String direccion;
-    private String numero_telefono;
-    private String fecha_nacimiento;
+    private String numeroTelefono;
+    private String fechaNacimiento;
 
-    public int getFuncionario_id() {
-        return funcionario_id;
+    public int getFuncionarioId() {
+        return funcionarioId;
     }
 
-    public void setFuncionario_id(int funcionario_id) {
-        this.funcionario_id = funcionario_id;
+    public void setFuncionarioId(int funcionarioId) {
+        this.funcionarioId = funcionarioId;
     }
 
-    public int getTipo_identificacion_id() {
-        return tipo_identificacion_id;
+    public int getTipoIdentificacionId() {
+        return tipoIdentificacionId;
     }
 
-    public void setTipo_identificacion_id(int tipo_identificacion_id) {
-        this.tipo_identificacion_id = tipo_identificacion_id;
+    public void setTipoIdentificacionId(int tipoIdentificacionId) {
+        this.tipoIdentificacionId = tipoIdentificacionId;
     }
 
-    public String getNumero_identificacion() {
-        return numero_identificacion;
+    public String getNumeroIdentificacion() {
+        return numeroIdentificacion;
     }
 
-    public void setNumero_identificacion(String numero_identificacion) {
-        this.numero_identificacion = numero_identificacion;
+    public void setNumeroIdentificacion(String numeroIdentificacion) {
+        this.numeroIdentificacion = numeroIdentificacion;
     }
 
     public String getNombres() {
@@ -53,12 +53,12 @@ public class Funcionario {
         this.apellidos = apellidos;
     }
 
-    public int getEstado_civil_id() {
-        return estado_civil_id;
+    public int getEstadoCivilId() {
+        return estadoCivilId;
     }
 
-    public void setEstado_civil_id(int estado_civil_id) {
-        this.estado_civil_id = estado_civil_id;
+    public void setEstadoCivilId(int estadoCivilId) {
+        this.estadoCivilId = estadoCivilId;
     }
 
     public String getSexo() {
@@ -77,20 +77,20 @@ public class Funcionario {
         this.direccion = direccion;
     }
 
-    public String getNumero_telefono() {
-        return numero_telefono;
+    public String getNumeroTelefono() {
+        return numeroTelefono;
     }
 
-    public void setNumero_telefono(String numero_telefono) {
-        this.numero_telefono = numero_telefono;
+    public void setNumeroTelefono(String numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
     }
 
-    public String getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFecha_nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     @Override

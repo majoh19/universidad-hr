@@ -22,15 +22,15 @@ public class FuncionarioController {
         funcionarioDao.crear(funcionario);
     }
     
-    public Funcionario obtenerFuncionario(int funcionario_id) throws SQLException {
-        return funcionarioDao.obtenerFuncionario(funcionario_id);
+    public Funcionario obtenerFuncionario(int funcionarioId) throws SQLException {
+        return funcionarioDao.obtenerFuncionario(funcionarioId);
     }
     
-    public void actualizarFuncionario(int funcionario_id, Funcionario funcionario) throws SQLException {
-        funcionarioDao.actualizarFuncionario(funcionario_id, funcionario);
+    public void actualizarFuncionario(int funcionarioId, Funcionario funcionario) throws SQLException {
+        funcionarioDao.actualizarFuncionario(funcionarioId, funcionario);
     }
     
-    public void eliminarFuncionario(int funcionario_id) throws SQLException {
-        funcionarioDao.eliminarFuncionario(funcionario_id);
+    public void eliminarFuncionario(int funcionarioId) throws SQLException {
+        funcionarioDao.eliminarFuncionario(funcionarioId);
     }
 }
